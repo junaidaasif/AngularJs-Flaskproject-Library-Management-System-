@@ -1,0 +1,21 @@
+<div class="alert alert-info" ng-if="message">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    User added Successfully !
+</div>
+<form ng-app="myCrud" ng-controller="logined" name="mylogin" class="form-horizontal" role="form" ng-submit="mylogin.$valid && login()"
+novalidate>
+    <div class="form-group">
+        <label class="control-label col-sm-3" for="age">Email:</label>
+        <div class="col-sm-7">
+            <input type="email" class="form-control" name="cemail" id="email_id"
+                placeholder="Enter Email" ng-model="logInUser.EMAIL" required>
+        </div>
+    </div>
+    <label class="control-label col-sm-3" for="name">First Name</label>
+    <div class="col-sm-7">
+        <input type="text" class="form-control" name="cfname" id="fname_id"
+            placeholder="Enter First Name" ng-model="logInUser.FNAME" required>
+    </div>
+  
+    <input type="submit" class="btn btn-info">
+  </form>

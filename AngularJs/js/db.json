@@ -1,0 +1,71 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "FNAME": "junaid",
+      "LNAME": "hjghj",
+      "EMAIL": "tv@gmail.com"
+    },
+    {
+      "id": 2,
+      "FNAME": "aashu",
+      "LNAME": "khana90",
+      "EMAIL": "junaid1aasif@gmail.com"
+    },
+    {
+      "Id": "jun2",
+      "FNAME": "junaid",
+      "LNAME": "khan",
+      "EMAIL": "junaidaasif@gmail.com",
+      "id": 3
+    },
+    {
+      "FNAME": "knasa",
+      "LNAME": "kava",
+      "EMAIL": "j@gfm",
+      "id": 4
+    },
+    {
+      "FNAME": "lofi",
+      "LNAME": "song",
+      "EMAIL": "lofi@gm",
+      "id": 5
+    },
+    {
+      "FNAME": "asdadslkdaskl",
+      "LNAME": "asjdas",
+      "EMAIL": "askj@fm",
+      "id": 6
+    },
+    {
+      "FNAME": "sa",
+      "LNAME": "alskd",
+      "EMAIL": "lk@fm",
+      "id": 7
+    },
+    {
+      "FNAME": "dasdas",
+      "LNAME": "khana",
+      "EMAIL": "tv@gmail.com",
+      "id": 8
+    },
+    {
+      "FNAME": "dasdas",
+      "LNAME": "kasl;dkd;",
+      "EMAIL": "tv@gmail.com",
+      "id": 9
+    },
+    {
+      "FNAME": "wdaaskl",
+      "LNAME": "jkwajdka",
+      "EMAIL": "tv@gmail.com",
+      "id": 10
+    },
+    {
+      "FNAME": "afds",
+      "LNAME": "sdaa",
+      "EMAIL": "tv@gmail.com",
+      "id": 11
+    }
+  ]
+}

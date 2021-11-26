@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<TITLE>AngularJS</TITLE>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mobile.css">
+
+  <!-- font css -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+
+<body ng-app="myApp">
+
+
+    <div ng-include="'navbar.html'"></div>
+
+
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute", "myCrud"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/crud", {
+                    templateUrl: "crud.html"
+                })
+                .when("/login", {
+                    templateUrl: "login.html"
+                })
+                .when("/register", {
+                    templateUrl: "Register.html"
+                })
+                .when("/", {
+                    templateUrl: "library.html"
+                })
+
+        });
+    </script>
+
+</body>
+
+</html>

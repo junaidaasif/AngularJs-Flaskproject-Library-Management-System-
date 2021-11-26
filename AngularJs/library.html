@@ -1,0 +1,215 @@
+<div class="container" style="width: 75%;" ng-app="myCrud" ng-controller="myLibController">
+  <h2>Welcome to <span><span id="mid">J</span>-Lib </span></h2>
+  <form id="libraryForm" method="POST" name="myLibForm" ng-submit="myLibForm.$valid && saveLib()" novalidate>
+    <div class="row mb-3">
+      <label for="bookName" class="col-sm-2 col-form-label">Book Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="bookName" placeholder="Booke Name" name="name"
+          ng-model="newLib.name" required>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="authorName" class="col-sm-2 col-form-label">Author Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="authorName" placeholder="Author Name" name="author"
+          ng-model="newLib.author" required>
+      </div>
+    </div>
+    <fieldset class="row mb-3">
+      <legend class="col-form-label col-sm-2 pt-0">Book Type</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input bscol" type="radio" name="type" id="Ftype" value="fiction"
+            ng-model="newLib.type">
+          <label class="form-check-label" for="Ftype">
+            Fiction
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input bscol" type="radio" name="type" id="Ptype" value="programming"
+            ng-model="newLib.type">
+          <label class="form-check-label" for="Ptype">
+            Programming
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input bscol" type="radio" name="type" id="Ctype" value="cooking"
+            ng-model="newLib.type">
+          <label class="form-check-label" for="Ctype">
+            Cooking
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+    <div class="row mb-3">
+      <div class="col-sm-10 offset-sm-2">
+        <div class="form-check">
+          <input class="form-check-input bscol" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary scol">Add Book</button>
+  </form>
+  <div id="table" class="my-5">
+    <h1>Your Books</h1>
+    <table class="table table-striped">
+
+
+
+      <!-- {% if allLib| length == 0 %}
+          <div class="alert alert-dark" role="alert">
+            No Records
+          </div>
+            {% else %}
+          -->
+      <thead>
+        <tr style="background-color: white;">
+          <!-- <th>Sno</th> -->
+          <th>Name</th>
+          <th>Type</th>
+          <th>Author</th>
+          <th>Time</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+
+
+        <tr class="Tcolor" ng-repeat="allLib in libraryData">
+          <!-- <td>{{lib.index}}</td>   this is use for incremental value -->
+          <td>{{allLib.name}}</td>
+          <td>{{allLib.type}}</td>
+          <td>{{allLib.author}}</td>
+          <td>{{allLib.date_created}}</td>
+
+          <td> <button type="button" class="btn btn-primary btn-sm scol" data-toggle="modal" data-target="#edit"
+              ng-click="selectLib(allLib)">Edit</button></td>
+          <td> <button type="button" class="btn btn-danger btn-sm scol" data-toggle="modal" data-target="#delete"
+              ng-click="selectLib(allLib)">Delete</button></a></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="edit" role="dialog">
+    <div class="modal-dialog modal-md">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">EDIT USER</h4>
+        </div>
+        <div class="modal-body">
+          <form id="libraryForm" method="POST" name="editFormLib"
+            ng-submit="editFormLib.$valid && updateLib(clickedLib.sno , clickedLib)" novalidate>
+            <div class="row mb-3">
+              <label for="bookName" class="col-sm-2 col-form-label">Book Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="bookName" ng-model="clickedLib.name"
+                  placeholder="Booke Name" name="name" ng-model="newLib.name" required>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="authorName" class="col-sm-2 col-form-label">Author Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="authorName" ng-model="clickedLib.author"
+                  placeholder="Author Name" name="author" ng-model="newLib.author" required>
+              </div>
+            </div>
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-2 pt-0">Book Type</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input bscol" type="radio" name="edittype" id="FEtype" value="fiction"
+                    ng-model="newLib.type">
+                  <label class="form-check-label" for="FEtype">
+                    Fiction
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input bscol" type="radio" name="edittype" id="PEtype" value="programming"
+                    ng-model="newLib.type">
+                  <label class="form-check-label" for="PEtype">
+                    Programming
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input bscol" type="radio" name="edittype" id="CEtype" value="cooking"
+                    ng-model="newLib.type">
+                  <label class="form-check-label" for="CEtype">
+                    Cooking
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+            <div class="row mb-3">
+              <div class="col-sm-10 offset-sm-2">
+                <div class="form-check">
+                  <input class="form-check-input bscol" type="checkbox" id="gridCheck1">
+                  <label class="form-check-label" for="gridCheck1">
+                    Example checkbox
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary scol">Add Book</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="delete" role="dialog">
+    <div class="modal-dialog modal-md">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">DELETE USER</h4>
+        </div>
+        <div class="modal-body">
+          <span>Do You Want To Delete This User Permanently ?</span><br>
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteLib()">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

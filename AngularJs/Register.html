@@ -1,0 +1,42 @@
+<div class="container" ng-app="myCrud" ng-controller="myController">
+<form name="myForm" class="form-horizontal" role="form" ng-submit="myForm.$valid && saveUser()"
+novalidate>
+<div class="form-group">
+    <!-- <label class="control-label col-sm-3" for="Id">id</label>
+    <div class="col-sm-7">
+        <input type="text" class="form-control" name="cfname" id="Id"
+            placeholder="Enter Id" ng-model="newUser.Id" required>
+    </div> -->
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="name">First Name</label>
+    <div class="col-sm-7">
+        <input type="text" class="form-control" name="cfname" id="fname_id"
+            placeholder="Enter First Name" ng-model="newUser.FNAME" required>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-sm-3" for="name">Last Name:</label>
+    <div class="col-sm-7">
+        <input type="text" class="form-control" name="clname" id="lname_id"
+            placeholder="Enter Last Name" ng-model="newUser.LNAME" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-sm-3" for="age">Email:</label>
+    <div class="col-sm-7">
+        <input type="email" class="form-control" name="cemail" id="email_id"
+            placeholder="Enter Email" ng-model="newUser.EMAIL" required>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <!-- <button type="submit" class="btn btn-info" data-dismiss="modal">Save</button> -->
+        <input type="submit" class="btn btn-info">
+    </div>
+</div>
+</form>
+</div>

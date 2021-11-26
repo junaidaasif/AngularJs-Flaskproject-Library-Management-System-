@@ -1,0 +1,167 @@
+:root{
+    --font1: 'Crimson Text', serif;
+    --font2: 'Ubuntu', sans-serif;
+    /* --scol: #FD8866; */
+    --scol: #0d6efd;
+    --scolLight : #0d6efd;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+.scol{
+    /* color: var(--scol); */
+    background-color: var(--scol);
+    border-color: var(--scol);
+}
+.bscol:checked{
+    background-color: var(--scol);
+    border-color: var(--scol);
+}
+.navigation{
+    font-family: var(--font2);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray ;
+    /* background-color: red; */
+}
+
+.navigation span{
+    font-weight: bolder; 
+}
+
+#mid{
+    color: var(--scol);
+    font-size: 50px;
+}
+.pickr .pcr-button {
+    height: 10px !important;
+    width: 20px !important;
+    padding: 0px;
+}
+
+.nav-right{
+    font-size: 25px;
+    display: flex;
+}
+
+.nav-left{
+    display: flex;
+    font-size: 25px;
+}
+
+.nav-right ul{
+
+    display: flex;
+    align-items: center;
+    margin-right: 10rem;
+    margin-bottom: 0px;
+}
+
+.nav-right ul li{
+    list-style: none;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+   
+    
+}
+
+.nav-right ul li a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.nav-right ul li a:hover{
+    color: var(--scol);
+}
+.max-width-1{
+    max-width: 80vw;
+}
+
+.mar-zero{
+    margin-left: 0px;
+}
+
+
+.mar-top{
+    margin-top: 30px;
+}
+
+.font1{
+    font-family: var(--font1);
+}
+.font2{
+    font-family: var(--font2);
+}
+
+.max-width-2{
+    max-width: 70vw;
+}
+
+.m-auto{
+    margin: auto
+}
+
+.form-input{
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid gray;
+    font-family: var(--font2);
+
+}
+
+.search-btn{
+    border: none;
+    margin-left: -30px;
+    font-size: 20px;
+    color: var(--scol);
+    background: white;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.search-btn:hover{
+color: black;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--scol);
+    border-color: var(--scol);
+}
+.btn-primary:hover {
+    color: black;
+    background-color: white;
+    border-color: var(--scol);
+}
+
+#alrt{
+    width: 100%;
+    height: 50px;
+
+}
+
+
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: var(--scolLight)!important;
+}
+
+
+.ng-invalid.ng-dirty {
+    border-color: red!important;
+}
+
+.ng-valid.ng-dirty {
+    border-color: green;
+}
